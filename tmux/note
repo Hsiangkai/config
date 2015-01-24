@@ -1,0 +1,8 @@
+git clone https://github.com/powerline/powerline.git
+git clone https://github.com/powerline/fonts.git
+
+mkdir ~/.config/powerline
+cp -R /path/to/powerline/config_files/* ~/.config/powerline
+
+Reference:
+http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin
