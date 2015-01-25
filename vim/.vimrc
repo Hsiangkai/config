@@ -59,6 +59,10 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" ',' is more convenient than '\'
+let mapleader = ","
+let g:mapleader = ","
+
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -132,8 +136,6 @@ set ambiwidth=single
 " " Favorite file types
 set ffs=unix,dos,mac
 
-nnoremap <F10> <ESC>:NERDTreeToggle<CR>
-
 "show CursorLine
 set cursorline
 
@@ -142,9 +144,6 @@ nmap q <Cr>
 
 " < and > are considering as a matching pair
 set matchpairs+=<:>
-
-" ',' is more convenient than '\'
-let mapleader = ","
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [ Diff related ]                                                           {{{
@@ -172,3 +171,33 @@ hi difftext ctermbg=3 ctermfg=0
 let g:DirDiffExcludes = "*.git,*.svn,.*.swp,tags,cscope.*"
 let g:DirDiffWindowSize = 6
 let g:DirDiffAddArgs = "-w"
+
+""""""""""""""""""""""""""""""
+" Clang-Completion
+""""""""""""""""""""""""""""""
+let g:clang_complete_auto=1
+let g:clang_auto_select = 1
+let g:clang_use_library=1
+let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
+let g:clang_snippets=0
+let g:clang_conceal_snippets=0
+let g:clang_periodic_quickfix=1
+let g:clang_hl_errors=1
+" let g:clang_snippets_engine='snipmate'
+"let g:clang_complete_copen=1
+
+""""""""""""""""""""""""""""""
+" vim-snipmate
+""""""""""""""""""""""""""""""
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['javascript'] = 'javascript,javascript-jquery'
+
+""""""""""""""""""""""""""""""
+" NERD tree
+""""""""""""""""""""""""""""""
+let NERDTreeIgnore=['\.o$', '\~$', '\.a$', '\.bak$', '\.d$']
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowBookmarks=1
+let NERDTreeChDirMode=2
+nmap <leader>d :NERDTreeToggle<CR>
