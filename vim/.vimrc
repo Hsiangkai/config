@@ -64,9 +64,6 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
-" powerline
-set rtp+=~/source/powerline/powerline/bindings/vim/
-
 " Always show statusline
 set laststatus=2
 
