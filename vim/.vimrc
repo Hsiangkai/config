@@ -40,6 +40,10 @@ filetype off                  " required
     Plugin 'godlygeek/tabular'
     Plugin 'tmhedberg/matchit'
     Plugin 'Lokaltog/vim-powerline'
+    Plugin 'chriskempson/tomorrow-theme'
+
+    " plugin from http://vim-scripts.org/vim/scripts.html
+    Plugin 'Syntastic'
 
     " Git plugin not hosted on GitHub
     Plugin 'git://repo.or.cz/vcscommand'
