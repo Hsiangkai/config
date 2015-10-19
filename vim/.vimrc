@@ -55,6 +55,45 @@ filetype off                  " required
     endif
 " Setting up Vundle - the vim plugin bundler end
 
+" general settings
+set history=1000             " keep 1000 lines of command line history
+set number                   " enable line numbers
+set autoindent               " enable autoindent
+set expandtab                " use space instead of tab
+set tabstop=4                " number of spaces for tab key
+set shiftwidth=4             " number of spaces for each indent
+set softtabstop=4            " number of spaces for tab key while performing editing operations
+syntax on                    " enable syntax highlighting
+colors Tomorrow-Night-Bright " vim color scheme
+set autoread                 " auto read when file is changed from outside
+set mouse=a                  " mouse support
+if has("gui_running")        " GUI color and font settings
+  set guifont=Monaco:h14
+end
+if has("gui_macvim")         " macvim shift movement
+  let macvim_hig_shift_movement = 1
+endif
+set cursorline               " highlight current line
+set clipboard=unnamed        " yank to the system register (*) by default
+set showmatch                " cursor shows matching ) and }
+set showmode                 " show current mode
+set backspace=2              " make backspace work like most other apps
+set laststatus=2             " always show statusline
+set smartindent              " smart Indent
+set cindent                  " C-style Indent
+set smarttab                 " smart handling of the tab key
+set shiftround               " round indent to multiple of shiftwidth
+set ruler                    " show the cursor position all the time
+set showcmd                  " display incomplete commands
+set incsearch                " do incremental searching
+set lazyredraw               " do not redraw while running macros (much faster) (LazyRedraw)
+set t_Co=256                 " Use 256 colours
+set hlsearch
+set noswapfile
+set ignorecase
+set smartcase
+
+
 " ',' is more convenient than '\'
 let mapleader = ","
 let g:mapleader = ","
@@ -64,22 +103,10 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
-" Always show statusline
-set laststatus=2
-
-" Use 256 colours (Use this setting only if your terminal supports 256 colours)
-set t_Co=256
-
 " Backups and swapfile
 set backup
 set backupdir=$HOME/.vim/backup/
 silent execute '!mkdir -p $HOME/.vim/backup'
-
-syntax on
-set noswapfile
-
-set ignorecase
-set smartcase
 
 " wildmode settings
 set wildmenu
@@ -93,44 +120,43 @@ nmap <C-k> <C-m>k
 nmap <C-h> <C-m>h
 nmap <C-l> <C-m>l
 
-set hlsearch
-set showmatch
-set number
-
-set autoindent     " Auto Indent
-set smartindent    " Smart Indent
-set cindent        " C-style Indent
-
-set smarttab       " Smart handling of the tab key
-set shiftround     " Round indent to multiple of shiftwidth
-set shiftwidth=4   " Number of spaces for each indent
-set tabstop=4      " Number of spaces for tab key
-set softtabstop=4  " Number of spaces for tab key while performing editing operations
-"set expandtab     " Use spaces for tabs.
-
-set history=1000   " keep 1000 lines of command line history
-set ruler          " show the cursor position all the time
-set showcmd        " display incomplete commands
-set incsearch      " do incremental searching
-
-set lazyredraw     " Do not redraw while running macros (much faster) (LazyRedraw)
-
 " {{{ file encoding setting
+set encoding=utf-8
 set fileencodings=utf-8,big5,euc-jp,gbk,euc-kr,utf-bom,iso8859-1
 set termencoding=utf-8
+set fileencoding=utf-8
 set enc=utf-8
 set tenc=utf8
 set fenc=utf-8
 " " }}}
+
+" tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
+" http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" disable sound on errors
+set noeb vb t_vb=
+
+" Hide toolbar and scrollbars in MacVim
+set guioptions-=T
+set guioptions-=L
+set guioptions-=r
+
+" add spell checking and automatic wrapping at the
+" recommended 72 columns to you commit messages
+autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " For ambiguous characters, ex: ”, and BBS XD
 set ambiwidth=single
 
 " " Favorite file types
 set ffs=unix,dos,mac
-
-"show CursorLine
-set cursorline
 
 " Remove 'recording' key mapping
 nmap q <Cr>
@@ -150,16 +176,6 @@ hi diffadd ctermbg=4
 hi DiffDelete ctermfg=69 ctermbg=234
 hi difftext ctermbg=3 ctermfg=0
 
-" function! s:DiffWithSaved()
-" 		let filetype=&ft
-" 		diffthis
-" 		vnew | r # | normal! 1Gdd
-" 		diffthis
-" 		exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-" endfunction
-" com! DiffSaved call s:DiffWithSaved()
-" nmap ,d :DiffSaved<CR>
-
 "DirDiff
 let g:DirDiffExcludes = "*.git,*.svn,.*.swp,tags,cscope.*"
 let g:DirDiffWindowSize = 6
@@ -171,7 +187,7 @@ let g:DirDiffAddArgs = "-w"
 let g:clang_complete_auto=1
 let g:clang_auto_select = 1
 let g:clang_use_library=1
-let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
+" let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
 let g:clang_snippets=0
 let g:clang_conceal_snippets=0
 let g:clang_periodic_quickfix=1
