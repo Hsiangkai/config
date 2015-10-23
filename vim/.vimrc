@@ -123,11 +123,11 @@ set wildmenu
 set wildmode=list:longest
 set wildignore+=*.o,*.a,*.so,*.obj,*.exe,*.lib,*.ncb,*.opt,.svn,.git
 
-" Use Ctrl-hjkl to switch between window
-nmap <C-j> <C-m>j
-nmap <C-k> <C-m>k
-nmap <C-h> <C-m>h
-nmap <C-l> <C-m>l
+" Use Alt+arrow to switch between window
+" nmap <silent> <A-Up> :wincmd k<CR>
+" nmap <silent> <A-Down> :wincmd j<CR>
+" nmap <silent> <A-Left> :wincmd h<CR>
+" nmap <silent> <A-Right> :wincmd l<CR>
 
 " {{{ file encoding setting
 set encoding=utf-8
