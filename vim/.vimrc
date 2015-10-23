@@ -22,6 +22,7 @@ filetype off                  " required
     Plugin 'gmarik/Vundle.vim'
 
     "Add your bundles here
+    " use :PluginUpdate to update plugins
     " plugin on GitHub repo
     Plugin 'tpope/vim-fugitive'
     Plugin 'scrooloose/nerdtree'
