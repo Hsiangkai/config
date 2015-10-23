@@ -42,6 +42,8 @@ filetype off                  " required
     Plugin 'Lokaltog/vim-powerline'
     Plugin 'chriskempson/tomorrow-theme'
     Plugin 'klen/python-mode'
+    Plugin 'jeetsukumaran/vim-buffergator'
+    Plugin 'xolox/vim-easytags'
 
     " plugin from http://vim-scripts.org/vim/scripts.html
     Plugin 'Syntastic'
