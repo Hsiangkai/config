@@ -219,3 +219,43 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeShowBookmarks=1
 let NERDTreeChDirMode=2
 nmap <leader>d :NERDTreeToggle<CR>
+
+""""""""""""""""""""""""""""""
+" buffergator
+" <leader>b     open buffer catalog
+" <leader>B     close buffer catalog
+" gb            flip through buffers without open buffer catalog
+" gB            flip through buffers without open buffer catalog
+" <C-N>         preview next buffer
+" <C-P>         preview previous buffer
+""""""""""""""""""""""""""""""
+" use the right side of the screen
+let g:buffergator_viewport_split_policy = 'R'
+" set the width of buffer catalog
+let g:buffergator_vsplit_size = 30
+" sort by most recently used
+let g:buffergator_sort_regime = "mru"
+
+""""""""""""""""""""""""""""""
+" easytags
+""""""""""""""""""""""""""""""
+" asynchronous update tags
+let g:easytags_async = 1
+" set global tags file
+let g:easytags_file = '~/.vim/tags'
+" set project-based tags file
+set tags=./tags;
+let g:easytags_dynamic_files = 1
+" update tags as writing back
+let g:easytags_events = ['BufWritePost']
+" recursively scan
+let g:easytags_autorecurse = 1
+" scan struct/class members in C++
+let g:easytags_include_members = 1
+" turn off auto highlight
+let g:easytags_auto_highlight = 0
+
+""""""""""""""""""""""""""""""
+" tagbar
+""""""""""""""""""""""""""""""
+nmap <F8> :TagbarToggle<CR>
