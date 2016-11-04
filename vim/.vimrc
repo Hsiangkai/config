@@ -68,10 +68,9 @@ filetype off                  " required
 set history=1000             " keep 1000 lines of command line history
 set number                   " enable line numbers
 set autoindent               " enable autoindent
-set expandtab                " use space instead of tab
-set tabstop=4                " number of spaces for tab key
-set shiftwidth=4             " number of spaces for each indent
-set softtabstop=4            " number of spaces for tab key while performing editing operations
+set tabstop=8                " number of spaces for tab key
+set shiftwidth=2             " number of spaces for each indent
+set softtabstop=8            " number of spaces for tab key while performing editing operations
 syntax on                    " enable syntax highlighting
 colors Tomorrow-Night-Bright " vim color scheme
 set autoread                 " auto read when file is changed from outside
