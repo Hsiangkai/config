@@ -33,5 +33,6 @@ PATH="$POWERLINE_SOURCE/scripts:$PATH"
 EDITOR=vim
 
 # set locale
-LC_ALL=en_US.UTF-8
-LANG=en_US.UTF-8
+LC_ALL='en_US.UTF-8'
+LANG='en_US.UTF-8'
+LC_CTYPE='en_US.UTF-8'
