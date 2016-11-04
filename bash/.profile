@@ -1,13 +1,35 @@
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
 
-# MacPorts Installer addition on 2014-10-24_at_21:30:49: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-export PATH="/Users/hkwang/source/powerline/scripts:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
 
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi
+
+# setup powerline source tree
+POWERLINE_SOURCE=$HOME/source/powerline/powerline
+
+# set PATH so it includes user's private bin directories
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+PATH="$POWERLINE_SOURCE/scripts:$PATH"
+
+# powerline settings
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /Users/hkwang/source/powerline/powerline/bindings/bash/powerline.sh
+. $POWERLINE_SOURCE/powerline/bindings/bash/powerline.sh
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+
+# set locale
+LC_ALL=en_US.UTF-8
+LANG=en_US.UTF-8
