@@ -46,6 +46,7 @@ filetype off                  " required
     Plugin 'jeetsukumaran/vim-buffergator'
     Plugin 'xolox/vim-misc'
     Plugin 'xolox/vim-easytags'
+    Plugin 'flazz/vim-colorschemes'
 
     " plugin from http://vim-scripts.org/vim/scripts.html
     Plugin 'Syntastic'
