@@ -24,10 +24,10 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 PATH="$POWERLINE_SOURCE/scripts:$PATH"
 
 # powerline settings
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. $POWERLINE_SOURCE/powerline/bindings/bash/powerline.sh
+#powerline-daemon -q
+#POWERLINE_BASH_CONTINUATION=1
+#POWERLINE_BASH_SELECT=1
+#. $POWERLINE_SOURCE/powerline/bindings/bash/powerline.sh
 
 
 # set locale
