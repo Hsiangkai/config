@@ -29,6 +29,8 @@ PATH="$POWERLINE_SOURCE/scripts:$PATH"
 #POWERLINE_BASH_SELECT=1
 #. $POWERLINE_SOURCE/powerline/bindings/bash/powerline.sh
 
+# setup default editor
+EDITOR=vim
 
 # set locale
 LC_ALL=en_US.UTF-8
