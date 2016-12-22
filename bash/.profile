@@ -20,9 +20,13 @@ fi
 POWERLINE_SOURCE=$HOME/source/powerline/powerline
 
 # set PATH so it includes user's private bin directories
-PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-PATH="$POWERLINE_SOURCE/scripts:$PATH"
-PATH="$HOME/arm-dev/bin:$PATH"
+PATH=$POWERLINE_SOURCE/scripts:$PATH
+
+# set arm development tools
+PATH=$HOME/arm-dev/bin:$PATH
+
+# setup icecc path
+PATH=/usr/lib/icecc/bin:$PATH
 
 # powerline settings
 #powerline-daemon -q
