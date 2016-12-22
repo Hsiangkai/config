@@ -26,7 +26,7 @@ PATH=$POWERLINE_SOURCE/scripts:$PATH
 PATH=$HOME/arm-dev/bin:$PATH
 
 # setup icecc path
-PATH=/usr/lib/icecc/bin:$PATH
+PATH=/usr/lib/icecc/bin:$HOME/icecc/bin:$PATH
 
 # powerline settings
 #powerline-daemon -q
