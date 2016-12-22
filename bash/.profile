@@ -22,6 +22,7 @@ POWERLINE_SOURCE=$HOME/source/powerline/powerline
 # set PATH so it includes user's private bin directories
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 PATH="$POWERLINE_SOURCE/scripts:$PATH"
+PATH="$HOME/arm-dev/bin:$PATH"
 
 # powerline settings
 #powerline-daemon -q
@@ -42,3 +43,5 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+DISPLAY=localhost:10.0
