@@ -24,6 +24,7 @@ PATH=$POWERLINE_SOURCE/scripts:$PATH
 
 # set arm development tools
 PATH=$HOME/arm-dev/bin:$PATH
+PATH=$HOME/arm-elf-dev/bin:$PATH
 
 # setup icecc path
 PATH=/usr/lib/icecc/bin:$HOME/icecc/bin:$PATH
