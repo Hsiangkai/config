@@ -1,11 +1,15 @@
+On target:
 git clone https://github.com/powerline/powerline.git
-git clone https://github.com/powerline/fonts.git
 
 sudo apt-get install python-pip
 sudo pip install powerline-status
 
 mkdir ~/.config/powerline
 cp -R /path/to/powerline/config_files/* ~/.config/powerline
+
+On host:
+git clone https://github.com/powerline/fonts.git
+
 
 Reference:
 http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin
